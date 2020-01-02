@@ -1,4 +1,4 @@
-# discordbotBVM
+# DiscordbotBVM
 A really nice moderation discord bot i made with the discord.js library.
 
 ### Join and leave message
