@@ -1,0 +1,6 @@
+{
+    //Add your custom token here
+    "token": "",
+    //Custom prefix!
+    "prefix":"!"
+}
