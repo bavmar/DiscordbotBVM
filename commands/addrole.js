@@ -1,3 +1,4 @@
+// import
 const Discord = require("discord.js")
 
 module.exports.run = async (client, message, args) => {
@@ -15,7 +16,10 @@ module.exports.run = async (client, message, args) => {
     if(rMember.roles.has(gRole.id)) return message.reply("They already have that role!.");
     await(rMember.addRole(gRole.id));
     let shoutoutchannel = message.guild.channels.find(`name`, "shoutouts");
+        // send message
         message.channel.send(`Congrats to <@${rMember.id}>, they have achieved the role **${gRole.name}**.`);
+        
+        // send message in shoutouchannel
         shoutoutchannel.send(`Congrats to <@${rMember.id}>, they have achieved the role **${gRole.name}**.`);
 }
 
