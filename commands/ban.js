@@ -1,5 +1,7 @@
+// imports
 const Discord = require("discord.js")
 const moment = require('moment');
+
 module.exports.run = async (client, message, args) => {
     //!ban @user reason
     let incidentchannel = message.guild.channels.find(`name`, "bans");
