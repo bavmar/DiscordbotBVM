@@ -149,9 +149,9 @@ client.on("message", async message => {
     .addField("Servers online?", "Yes")
     .setFooter("This message is updated every few seconds.");
         
-        serverinfoChannel.bulkDelete(1).then(() => {
+    serverinfoChannel.bulkDelete(1).then(() => {
         serverinfoChannel.send(serverEmbed); 
-        });
+    });
 
 });
 //Als een user erbij komt
