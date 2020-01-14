@@ -39,13 +39,13 @@ client.on("message", async message => {
     let commandfile = client.commands.get(cmd.slice(prefix.length));
     if(commandfile) commandfile.run(client,message,args);
 
-    //React bij alle wishlists
+    //React by whishlist channels
     if(message.channel.id === '441724504381587476' || message.channel.id === '457999593318383616' || message.channel.id === '462940450140061699' ) {
         message.react("👍").then(() => {
         message.react("👎");
         });
     }
-    //React bij polls
+    //React with polls
     if(message.channel.id === '441987844236378124') {
         //Als poll geen nummers heeft.
         if(!message.content.includes(emojiCharacters[2]) 
@@ -59,13 +59,13 @@ client.on("message", async message => {
             message.react("👎");
             });
         }
-        //Poll van 2
+        //Poll of 2
         if(message.content.includes(emojiCharacters[2]) && !message.content.includes(emojiCharacters[3])) {
             message.react(emojiCharacters[1]).then(() => {
             message.react(emojiCharacters[2]);
         }); 
         }
-        //Poll van 3
+        //Poll of 3
         if(message.content.includes(emojiCharacters[3]) && !message.content.includes(emojiCharacters[4])) {
             message.react(emojiCharacters[1]).then(() => {
             message.react(emojiCharacters[2]).then(() => {
@@ -73,7 +73,7 @@ client.on("message", async message => {
         });
         });
         }
-        //Poll van 4
+        //Poll of 4
         if(message.content.includes(emojiCharacters[4]) && !message.content.includes(emojiCharacters[5])) {
             message.react(emojiCharacters[1]).then(() => {
             message.react(emojiCharacters[2]).then(() => {
@@ -83,7 +83,7 @@ client.on("message", async message => {
         });
         });
         }
-        //Poll van 5
+        //Poll of 5
         if(message.content.includes(emojiCharacters[5]) && !message.content.includes(emojiCharacters[6])) {
             message.react(emojiCharacters[1]).then(() => {
             message.react(emojiCharacters[2]).then(() => {
@@ -95,7 +95,7 @@ client.on("message", async message => {
         });
         });
         }
-        //Poll van 6
+        //Poll of 6
         if(message.content.includes(emojiCharacters[6])) {
             message.react(emojiCharacters[1]).then(() => {
             message.react(emojiCharacters[2]).then(() => {
@@ -187,7 +187,7 @@ client.on("guildMemberRemove", async member => {
         .addField(`Left at`, memberLeftAt);
         welcomeChannel.send(byeEmbed);
 });
-//Als een bericht wordt verwijderd.
+//If user gets deleted
 client.on("messageDelete", async message => { 
         let deleteChannel = message.guild.channels.find(`name`, "deletes");
 
@@ -198,7 +198,7 @@ client.on("messageDelete", async message => {
         .addField("Message deleted By", `${message.author} with ID ${message.author.id}`)
         deleteChannel.send(DeleteEmbed);
 });
-//Op een ban
+//Ban
 client.on("guildBanRemove", async (guild, user) =>  {
     let incidentchannel = guild.channels.find(`name`, "bans");
     let BanRemoveEmbed = new Discord.RichEmbed() 
